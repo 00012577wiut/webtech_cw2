@@ -8,4 +8,4 @@ Here is the dependicies list bellow:
 body-parser,ejs,express,mongodb,mongoose,nodemon
 
 Link for github repository: https://github.com/00012577wiut/webtech_cw2
-Link for heroku:   
+Link for heroku:  https://book-reviews-wiut.herokuapp.com/
