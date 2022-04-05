@@ -1,0 +1,28 @@
+<%- include('../parts/header.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../parts/nav.ejs') %>
+            <main class="mt-5 px-5 shadow container bg-dark">
+                <h4 class="text-light">
+                    <%= book[0].author %>
+                </h4>
+                <ul class="list-group bg-warning list-group-flush">
+                    <li class="list-group-item bg-warning">
+                        <%= book[0].book_name %>
+                    </li>
+                    <li class="list-group-item bg-warning">comment:
+                        <%= book[0].comment %>
+                    </li>
+                    <li class="list-group-item bg-warning">days:
+                        <%= book[0].days %>
+                    </li>
+                </ul>
+                <hr class="text-light bg-light">
+                <form action="/book-delete" method="post">
+                    <input type="hidden" name="bookId" value="<%= book[0]._id %>">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </main>
+
+            <%- include('../parts/footer.ejs') %>

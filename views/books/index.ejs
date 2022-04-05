@@ -1,0 +1,44 @@
+<%- include('../parts/header.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../parts/nav.ejs') %>
+            <div class="container mt-5 d-flex justify-content-between">
+            </div>
+            <div id="accordion" class="container mt-3">
+                <% if (books.length > 0) { %>
+                    <% for (let book of books) { %>
+                        <div class="card">
+                            <div class="card-header bg-warning" id="headingOne">
+                                <h5 class="mb-0">
+                                    <a class="btn text-left btn-warning w-100" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <%= book.author %>
+                                    </a>
+                                </h5>
+                            </div>
+
+                            <div id="" class="bg-dark text-light collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <h5>
+                                        <%= book.book_name %>
+                                    </h5>
+                                    <p>
+                                        <%= book.comment %>
+                                    </p>
+                                    <div class="d-flex mt-2">
+                                        <a href="/book-edit/<%= book._id %>"><button class="btn btn-warning">Edit</button></a>
+                                        <form action="/book-detail" class="mx-2" method="post">
+                                            <input type="hidden" value="<%= book._id %>" name="bookId">
+                                            <button class="btn btn-primary" type="submit">View more</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% } else { %>
+                                <h1>No Books Found!</h1>
+                                <% } %>
+            </div>
+
+            <%- include('../parts/footer.ejs') %>

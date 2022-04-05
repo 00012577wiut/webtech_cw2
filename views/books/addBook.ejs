@@ -1,0 +1,35 @@
+<%- include('../parts/header.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../parts/nav.ejs') %>
+
+            <div class="container mt-4 shadow bg-dark text-light">
+                <h4 class="text-primary">New Book</h4>
+                <hr class="bg-primary">
+                <form action="/add-new-book" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="book_name">Title of the Book</label>
+                            <input type="text" name="book_name" class="form-control" id="book_name" placeholder="Rework" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="author">Author of the Book</label>
+                            <input type="text" name="author" required class="form-control" id="author" placeholder="John Doe">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="comment">Your comment</label>
+                            <input type="text" name="comment" class="form-control" id="comment" placeholder="It was incredible, i cant describe" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="days">How long does it take to finish this book ?</label>
+                            <input type="number" name="days" required class="form-control" id="days" placeholder="5">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary w-100" type="submit">Submit</button>
+                </form>
+            </div>
+
+            <%- include('../parts/footer.ejs') %>
